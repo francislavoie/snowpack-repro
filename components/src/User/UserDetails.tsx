@@ -25,7 +25,7 @@ export const PlayerDetails = (props: Props) => {
   return details && props.get?.id ? (
     <div>
       <>
-        <label>Name:</label> {details.name}
+        <label className="bg-blue-500">Name:</label> {details.name}
         <label>Balance:</label> {details.email}
       </>
     </div>

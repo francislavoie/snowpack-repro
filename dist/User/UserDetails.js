@@ -8,5 +8,7 @@ export const PlayerDetails = (props) => {
   useEffect(() => {
     getDetails();
   }, [props.get.id]);
-  return details && props.get?.id ? /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("label", null, "Name:"), " ", details.name, /* @__PURE__ */ React.createElement("label", null, "Balance:"), " ", details.email)) : /* @__PURE__ */ React.createElement(React.Fragment, null);
+  return details && props.get?.id ? /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("label", {
+    className: "bg-blue-500"
+  }, "Name:"), " ", details.name, /* @__PURE__ */ React.createElement("label", null, "Balance:"), " ", details.email)) : /* @__PURE__ */ React.createElement(React.Fragment, null);
 };
