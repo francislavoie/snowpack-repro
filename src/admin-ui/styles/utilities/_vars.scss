@@ -1,0 +1,140 @@
+//@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+// Variables
+// ----------------------------------------------------------------------
+
+// Base
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+// Base branding
+$base-black: #191919;
+$base-link-color: #374c67;
+
+// Colors
+// ----------------------------------------------------------------------
+// Primary
+$blue-1: #f5f9fd;
+$blue-2: #e5eff9;
+$blue-3: #0066cc;
+$blue-4: #004183;
+
+// Secondary
+$red-1: #fbebeb;
+$red-2: #f8d5d5;
+$red-3: #de3535;
+
+$cyan-1: #effcfc;
+$cyan-2: #cdf5f5;
+$cyan-3: #00c7c7;
+
+$indigo-1: #ececfb;
+$indigo-2: #d0d0f6;
+$indigo-3: #1010cf;
+
+$violet-1: #f3eafb;
+$violet-2: #e0cbf5;
+$violet-3: #5600ad;
+
+$teal-1: #f1fcf6;
+$teal-2: #d1f6e4;
+$teal-3: #07cd6a;
+
+// Greys
+$grey-1: #f8f9f9;
+$grey-2: #ecedef;
+$grey-3: #dee0e3;
+$grey-4: #adb3ba;
+$grey-5: #616d79;
+$grey-6: #374048;
+$grey-7: #15181c;
+
+// Errors & Warnings
+$positive-dark: #336600;
+$positive: #66cc00;
+$positive-light: #ecf9df;
+
+$warning-dark: #805207;
+$warning: #ffa40d;
+$warning-light: #ffe8c3;
+
+$negative-dark: #800000;
+$negative: #cc0000;
+$negative-light: #f9dfdf;
+
+// Fonts
+$base-font: "Open Sans", sans-serif;
+
+// Use only for custom(external) fonts (not Google Fonts)
+$base-font-italic: $base-font;
+$base-font-bold: $base-font;
+$base-font-bold-italic: $base-font;
+$base-font-medium: $base-font;
+$base-font-medium-italic: $base-font;
+
+// Grid sizes
+$grid-1: 6.86666666667%;
+$grid-2: 16.6666666667%;
+$grid-3: 25%;
+$grid-4: 33.3333333333%;
+$grid-5: 40.7333333333%;
+$grid-6: 50%;
+$grid-7: 57.6666666667%;
+$grid-8: 66.6666666667%;
+$grid-9: 75%;
+$grid-10: 83.3333333337%;
+$grid-11: 91.5333333333%;
+$grid-12: 100%;
+$grid-50: 50%;
+
+// In between grid sizes
+$grid-2-3: 20%;
+
+// Base container widths
+$base-width: 90rem; // 1440px
+$base-width-fullhd: 78.75rem; // 1260px
+$base-width-full: 64rem; // 1024px
+$base-width-desktop: 48rem; // 768px
+$base-width-tablet: 40rem; // 640px
+$base-width-xs: 18.75rem; // 300px
+
+// Base container widths in pixels
+$base-width-px: 1440;
+$base-width-fullhd-px: 1260;
+$base-width-full-px: 1024;
+$base-width-desktop-px: 768;
+$base-width-tablet-px: 640;
+$base-width-xs-px: 300;
+
+// Responsive sizes
+$tablet: $base-width-tablet;
+$desktop: $base-width-desktop;
+$mediumscreen: $base-width-full;
+$widescreen: $base-width-fullhd;
+$fullscreen: $base-width;
+
+// Screen heights
+$min-screen-height-xs: 414px;
+$min-screen-height-sm: 35.4375rem; // 567px
+$min-screen-height-md: 41.6875rem; // 667px
+$min-screen-height: 45.75rem; // 732px;
+$min-screen-height-lg: 55rem; // 880px;
+
+// Padding and/or margin sizes for consistency
+$pm-size-05: 6px;
+$pm-size-1: 12px;
+$pm-size-2: 20px;
+$pm-size-3: 30px;
+$pm-size-4: 40px;
+$pm-size-5: 50px;
+$pm-size-6: 60px;
+$pm-size-7: 70px;
+$pm-size-8: 80px;
+$pm-size-9: 90px;
+$pm-size-10: 100px;
+
+// Element sizes
+$header-bar-height: 60px;
+$footer-height-sm: 60px;
+$footer-height-md: 150px;
+$footer-height-lg: 200px;

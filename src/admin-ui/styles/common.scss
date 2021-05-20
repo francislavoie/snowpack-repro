@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+@import "utilities/_vars";
+@import "utilities/_mixins";
+
+// Blue theme overrides
+.admin-react-container {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    border: 0;
+  }
+
+  label {
+    width: auto;
+  }
+
+  // Not enough variants in TW
+  button {
+    outline: 0 none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include transition(all, 0.2s, ease-in-out);
+
+    &:focus {
+      outline: 0 none;
+    }
+
+    &:disabled,
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  select {
+    outline: 0 none;
+  }
+
+  .filters-head {
+    button {
+      &:disabled,
+      &[disabled],
+      &.disabled {
+        background: transparent;
+      }
+    }
+  }
+
+  // Tags TODO: use TW
+  .selected-tag {
+    background: $blue-2;
+    margin: rem(0 3px 3px 0);
+    padding: rem(5px);
+    border: 0;
+    border-radius: rem(3px);
+    outline: 0 none;
+
+    > span {
+      color: $grey-6;
+      position: relative;
+      margin-left: rem(8px);
+
+      .svg-cancel {
+        display: inline-block;
+        height: rem(11px);
+        width: rem(11px);
+        fill: $grey-5;
+      }
+    }
+  }
+}
