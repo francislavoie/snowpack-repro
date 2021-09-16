@@ -1,5 +1,8 @@
 import { Component, createElement } from "react";
 import { render } from "react-dom";
+import 'vite/modulepreload-polyfill';
+import './admin-ui/styles/tailwind.css';
+import './admin-ui/styles/common.scss';
 
 declare let window: {
   AdminConfig: AdminConfig;
