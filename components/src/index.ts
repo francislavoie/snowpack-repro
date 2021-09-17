@@ -4,6 +4,9 @@ import 'vite/modulepreload-polyfill';
 import './admin-ui/styles/tailwind.css';
 import './admin-ui/styles/common.scss';
 
+// Map the pages to their built files
+const modules = import.meta.glob('./!(stories|types)/*!(spec|test|stories).tsx')
+
 declare let window: {
   AdminConfig: AdminConfig;
 };
@@ -26,26 +29,35 @@ export type Map<V> = { [K in string | number]: V };
 // Load injected config
 let config: AdminConfig = window.AdminConfig;
 
-// Import and render the page component
-console.time("Load");
-import(`./${config.category}/${config.component}.js`)
-  .then(
-    (module: Map<string>) =>
+// Get the page from the module map, if available
+const pageModule = modules[`./${config.category}/${config.component}.tsx`] ?? null;
+if (pageModule === null) {
+  // If the page isn't in the map, render the NotFound page
+  console.error(`Module ${config.category}/${config.component} not found`);
+  modules[`./Errors/NotFound.tsx`]()
+    .then((module) =>
+      render(createElement<Component>(module.NotFound), config.target)
+    );
+} else {
+  // Import and render the page component
+  console.time("Load");
+  pageModule()
+    .then((module: Map<string>) =>
       render(
         createElement<Component>(module[config.component], {
           ...config.params,
           ...config.initial,
         } as any),
         config.target
-      ),
-    (e) => {
+      )
+    )
+    .catch((e) => {
       console.error(e);
-      import(`./Errors/NotFound.js`).then((module) =>
-        render(createElement<Component>(module.NotFound), config.target)
-      );
-    }
-  )
-  .finally(() => {
-    config.loader.style.display = "none";
-    console.timeEnd("Load");
-  });
+      modules[`./Errors/NotFound.tsx`]()
+        .then((module) => render(createElement<Component>(module.NotFound), config.target));
+    })
+    .finally(() => {
+      config.loader.style.display = "none";
+      console.timeEnd("Load");
+    });
+}

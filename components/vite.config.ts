@@ -10,7 +10,14 @@ export default defineConfig({
     emptyOutDir: true,
     minify: false,
     rollupOptions: {
-      input: './src/index.ts'
+      input: './src/index.ts',
+      // NOTE: We could turn off file hashes,
+      //       if they start to cause git problems
+      // output: {
+      //   entryFileNames: `assets/[name].js`,
+      //   chunkFileNames: `assets/[name].js`,
+      //   assetFileNames: `assets/[name].[ext]`
+      // }
     }
   }
 })

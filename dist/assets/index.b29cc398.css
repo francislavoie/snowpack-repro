@@ -1,4 +1,4 @@
-/*! tailwindcss v2.2.7 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*! tailwindcss v2.2.15 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
 Document
@@ -449,6 +449,18 @@ button,
   cursor: pointer;
 }
 
+/**
+ * Override legacy focus reset from Normalize with modern Firefox focus styles.
+ *
+ * This is actually an improvement over the new defaults in Firefox in our testing,
+ * as it triggers the better focus styles even for links, which still use a dotted
+ * outline in Firefox by default.
+ */
+ 
+:-moz-focusring {
+	outline: auto;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -560,4 +572,55 @@ video {
 .bg-blue-500 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(0, 102, 204, var(--tw-bg-opacity));
+}
+.admin-react-container h1,
+.admin-react-container h2,
+.admin-react-container h3,
+.admin-react-container h4,
+.admin-react-container h5 {
+  border: 0;
+}
+.admin-react-container label {
+  width: auto;
+}
+.admin-react-container button {
+  outline: 0 none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+.admin-react-container button:focus {
+  outline: 0 none;
+}
+.admin-react-container button:disabled, .admin-react-container button[disabled], .admin-react-container button.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.admin-react-container select {
+  outline: 0 none;
+}
+.admin-react-container .filters-head button:disabled, .admin-react-container .filters-head button[disabled], .admin-react-container .filters-head button.disabled {
+  background: transparent;
+}
+.admin-react-container .selected-tag {
+  background: #e5eff9;
+  margin: 0 0.1875rem 0.1875rem 0;
+  padding: 0.3125rem;
+  border: 0;
+  border-radius: 0.1875rem;
+  outline: 0 none;
+}
+.admin-react-container .selected-tag > span {
+  color: #374048;
+  position: relative;
+  margin-left: 0.5rem;
+}
+.admin-react-container .selected-tag > span .svg-cancel {
+  display: inline-block;
+  height: 0.6875rem;
+  width: 0.6875rem;
+  fill: #616d79;
 }
